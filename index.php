@@ -122,7 +122,6 @@
             transform: scale(1.5);
           }
         }
-
     </style>
 </head>
 <body>
@@ -130,10 +129,10 @@
 <div class="check_version_form">
     <input type="text" id="url" placeholder="Please enter the url...."/>
     <br />
-    <button type="submit" onclick="loadDoc()">Check Version</button>
+    <button type="submit" onclick="loadDoc()">Detect Theme</button>
     <div class="result-box">
-        <strong>Result</strong>
-        <span id="result"></span>
+        <strong>Result</strong> <br/>
+        <span id="result" style="display:block; background-color:grey;"></span>
     </div>
     <div id="loader" class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
