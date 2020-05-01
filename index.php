@@ -131,7 +131,10 @@
     <input type="text" id="url" placeholder="Please enter the url...."/>
     <br />
     <button type="submit" onclick="loadDoc()">Check Version</button>
-    <div class="result-box"><strong>Result: </strong><span id="result"></span></div>
+    <div class="result-box">
+        <strong>Result</strong>
+        <span id="result"></span>
+    </div>
     <div id="loader" class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
 
