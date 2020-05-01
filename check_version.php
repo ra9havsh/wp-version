@@ -15,11 +15,11 @@
             $themes .= ', '.$t;
           }   
           
-          echo '</br>themes : '.$themes.'</br>';                   
+          echo '</br>Theme : '.$themes.'</br>';                   
         } 
         else 
         {
-          echo '</br>themes : no themes found </br>';
+          echo '</br>Theme : No themes found! May be this site is not using wordpress. </br>';
         }
    
         if(preg_match_all('/wp-content\/plugins\/(.*?)\//', $output, $match)) 
@@ -32,24 +32,34 @@
             $plugins .= ', '.$p;
           }           
           
-          echo 'plugins : '.$plugins.'</br>';
+          echo 'Plugins : '.$plugins.'</br>';
+        } 
+	if(preg_match('*This site is optimized with the Yoast SEO plugin*', $output, $match)) 
+        {
+          $ad = $match[0];                  
+          echo '<br/>Seo Plugin: Yoast SEO</br>';
+        } 
+	if(preg_match('*Performance optimized by W3 Total Cache*', $output, $match)) 
+        {
+          $ad = $match[0];                  
+          echo '<br/>Caching Plugin: W3 Total Cache</br>';
         } 
         else 
         {
-          echo 'plugins : no plugins found</br>';
+          echo 'Other Plugins : No Results!</br>';
         }
         
         if(preg_match('/adsbygoogle.js/', $output, $match)) 
         {
           $ad = $match[0];                  
-          echo 'Found '.$ad.'</br>';
+          echo 'Adsense Found! This Site is using google adsense for monitizing the content.</br>';
         } 
         else 
         {
-          echo 'Google adsense not found</br>';
+          echo 'This site is not using Google adsense</br>';
         }
     }else{
-        echo 'URL not reachable!';// Throw message when URL not be called
+        echo 'Please Enter Url including (Https/Http)';// Throw message when URL not be called
     }
     
     # URL Check
